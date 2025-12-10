@@ -1,0 +1,80 @@
+Laboratorio 2: Monitoreo y Procesamiento de Procesos con Bash y Pipes
+======================================================================
+Curso de Sistemas Operativos - Segundo Semestre 2025
+
+Integrantes:
+- Nombre: [NOMBRE_1], RUT: [RUT_1]
+- Nombre: [NOMBRE_2], RUT: [RUT_2]
+
+DESCRIPCION
+-----------
+Este programa implementa un pipeline de procesos en C que ejecuta scripts
+de bash encadenados. Utiliza las llamadas al sistema fork(), pipe(), dup2()
+y exec() para crear procesos hijos conectados por pipes.
+
+COMPILACION
+-----------
+Para compilar el programa:
+
+    make
+
+Para limpiar archivos generados:
+
+    make clean
+
+EJECUCION
+---------
+El programa lee una linea de pipeline desde stdin. Ejemplos:
+
+1. Pipeline completo (6 scripts):
+
+    echo "./generator.sh -i 1 -t 5 | ./preprocess.sh | ./filter.sh -c 0 -m 0 | ./transform.sh --anon-uid | ./aggregate.sh | ./report.sh -o reporte.csv" | ./lab2
+
+2. Pipeline parcial (2 scripts):
+
+    echo "./generator.sh -i 1 -t 3 | ./preprocess.sh" | ./lab2
+
+3. Con filtros especificos:
+
+    echo "./generator.sh -i 1 -t 10 | ./preprocess.sh | ./filter.sh -c 5 -m 1 -r '^bash$' | ./transform.sh --anon-uid | ./aggregate.sh | ./report.sh -o reporte.csv" | ./lab2
+
+4. Usando heredoc:
+
+    ./lab2 <<< "./generator.sh -i 1 -t 5 | ./preprocess.sh | ./aggregate.sh"
+
+5. Desde un archivo:
+
+    echo "./generator.sh -i 1 -t 5 | ./preprocess.sh" > pipeline.txt
+    ./lab2 < pipeline.txt
+
+OPCIONES
+--------
+    -h    Muestra mensaje de ayuda
+
+SCRIPTS DISPONIBLES
+-------------------
+- generator.sh   : Genera datos de procesos con ps
+                   Flags: -i <intervalo_seg> -t <duracion_seg>
+
+- preprocess.sh  : Valida y normaliza el formato de datos
+                   Flags: --iso8601 (opcional)
+
+- filter.sh      : Filtra procesos por CPU, memoria y nombre
+                   Flags: -c <cpu_min> -m <mem_min> -r <regex>
+
+- transform.sh   : Anonimiza UIDs con hash MD5
+                   Flags: --anon-uid
+
+- aggregate.sh   : Agrupa por comando y calcula metricas
+
+- report.sh      : Genera reporte CSV con metadatos
+                   Flags: -o <archivo_salida>
+
+ARCHIVOS
+--------
+- lab2.c         : Programa principal (main)
+- funciones.c    : Implementacion de funciones
+- funciones.h    : Cabeceras de funciones
+- Makefile       : Archivo de compilacion
+- *.sh           : Scripts de bash del pipeline
+- reporte.csv    : Ejemplo de reporte generado
