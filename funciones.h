@@ -23,15 +23,9 @@
 #define MAX_ARGS 64
 #define MAX_LINEA 4096
 
-// Entradas: linea - cadena con el pipeline completo (ej: "cmd1 | cmd2 | cmd3")
-// Salidas: 0 si exito, -1 si error
-// Descripcion: Parsea la linea, crea procesos hijos conectados por pipes,
-//              y ejecuta cada comando del pipeline
+// Entradas: linea - pipeline completo (ej: "cmd1 | cmd2")
+// Salidas: 0 exito, -1 error
+// Descripcion: Crea procesos hijos conectados por pipes y ejecuta cada comando
 int ejecutar_pipeline(char *linea);
-
-// Entradas: mensaje - texto a mostrar
-// Salidas: ninguna
-// Descripcion: Muestra el mensaje de ayuda del programa
-void mostrar_ayuda(const char *nombre_programa);
 
 #endif
