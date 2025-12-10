@@ -1,0 +1,5 @@
+# Archivos objeto
+*.o
+
+# Ejecutable
+lab2
