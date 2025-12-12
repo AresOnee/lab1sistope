@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
+# Integrantes:
+# - Nombre: Sofia Vergara, RUT 21.082.148-1
+# - Nombre: Vladimir Vidal, RUT 18.031.181-5
 # Entrada: TSV del preprocess por stdin (ts pid uid comm pcpu pmem).
 # Salida: el mismo TSV pero solo con filas que cumplen los umbrales y (si se pasó) la regex.
 # Descripcion: Filtra la salida del preprocesador según umbrales de CPU y memoria y,
