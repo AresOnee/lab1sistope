@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
-
+# Integrantes:
+# - Nombre: Sofia Vergara, RUT 21.082.148-1
+# - Nombre: Vladimir Vidal, RUT 18.031.181-5
 # Entrada: TSV del filtro (ts pid uid comm pcpu pmem).
 # Salida: TSV con misma cantidad de columnas, pero uid anonimizad@ (hash/código).
 # Descripcion:  Anonimiza el UID de la salida del filtro cuando se indica la opción
