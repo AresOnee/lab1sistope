@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Integrantes:
+# - Nombre: Sofia Vergara, RUT 21.082.148-1
+# - Nombre: Vladimir Vidal, RUT 18.031.181-5
 #------ CONDICIONALES ------#
 # eq: igual.
 # ne: no igual.
