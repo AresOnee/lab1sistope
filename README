@@ -26,24 +26,27 @@ El programa lee una linea de pipeline desde stdin. Ejemplos:
 1. Pipeline completo (6 scripts):
 
 Procesos gnome con CPU >= 1%
-./lab2 ./generator.sh -i 1 -t 10 | ./preprocess.sh | ./filter.sh -c 1 -m 0 -r "gnome" | ./transform.sh --anon-uid | ./aggregate.sh | ./report.sh -o report.csv
+./lab2 ./generator.sh -i 1 -t 10 \| ./preprocess.sh \| ./filter.sh -c 0 -m 0 \| ./transform.sh --anon-uid \| ./aggregate.sh \| ./report.sh -o reporte.csv
 
 2. Pipeline parcial (2 scripts):
 
-    echo "./generator.sh -i 1 -t 3 | ./preprocess.sh" | ./lab2
+    /lab2 ./generator.sh -i 1 -t 10 \| ./preprocess.sh \|
 
 3. Con filtros especificos:
 
     echo "./generator.sh -i 1 -t 10 | ./preprocess.sh | ./filter.sh -c 5 -m 1 -r '^bash$' | ./transform.sh --anon-uid | ./aggregate.sh | ./report.sh -o reporte.csv" | ./lab2
 
-4. Usando heredoc:
+4. Solo procesos de gnome:
 
-    ./lab2 <<< "./generator.sh -i 1 -t 5 | ./preprocess.sh | ./aggregate.sh"
+    ./lab2 ./generator.sh -i 1 -t 10 \| ./preprocess.sh \| ./filter.sh -c 5 -m 1 -r "gnome" \| ./transform.sh --anon-uid \| ./aggregate.sh \| ./report.sh -o reporte.csv
 
-5. Desde un archivo:
+5. Filtrando por CPU a 5%:
 
-    echo "./generator.sh -i 1 -t 5 | ./preprocess.sh" > pipeline.txt
-    ./lab2 < pipeline.txt
+    ./lab2 ./generator.sh -i 1 -t 10 \| ./preprocess.sh \| ./filter.sh -c 5 -m 0 \| ./transform.sh --anon-uid \| ./aggregate.sh \| ./report.sh -o reporte.csv
+
+6. Filtrando de procesos que consuman al menos 1% de memoria:
+
+   ./lab2 ./generator.sh -i 1 -t 5 \| ./preprocess.sh \| ./filter.sh -c 0 -m 1 \| ./transform.sh --anon-uid \| ./aggregate.sh \| ./report.sh -o reporte.csv
 
 
 SCRIPTS DISPONIBLES
