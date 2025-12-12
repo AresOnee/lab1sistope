@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Integrantes:
+# - Nombre: Sofia Vergara, RUT 21.082.148-1
+# - Nombre: Vladimir Vidal, RUT 18.031.181-5
 # Entradas: TSV por stdin con encabezado: (ts|ts_iso)  pid  uid  comm  pcpu  pmem
 # Salidas : TSV por stdout con encabezado: command  nproc  cpu_avg  cpu_max  mem_avg  mem_max
 # Flags   : -l <archivo_log>
