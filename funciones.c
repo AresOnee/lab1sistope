@@ -1,10 +1,10 @@
 /*
  * Laboratorio 2: Monitoreo y Procesamiento de Procesos con Bash y Pipes
- * Curso de Sistemas Operativos - Segundo Semestre 2025
+ * Sistemas Operativos - Segundo Semestre 2025
  *
-# Integrantes:
-# - Nombre: Sofia Vergara, RUT 21.082.148-1
-# - Nombre: Vladimir Vidal, RUT 18.031.181-5
+ * Integrantes:
+ *  Nombre: Sofia Vergara, RUT 21.082.148-1
+ *  Nombre: Vladimir Vidal, RUT 18.031.181-5
  *
  * Archivo: funciones.c
  * Descripcion: Implementacion del pipeline de procesos
@@ -16,7 +16,7 @@
 // Entradas: linea - pipeline completo (ej: "cmd1 -a | cmd2 -b")
 // Salidas: 0 exito, -1 error
 // Descripcion: Parsea la linea, crea procesos hijos con fork(),
-//              los conecta con pipe() y dup2(), ejecuta con execvp()
+// los conecta con pipe() y dup2(), ejecuta con execvp()
 int ejecutar_pipeline(char *linea) {
     char *cmds[MAX_COMANDOS], *saveptr1, *saveptr2;
     int n = 0, fd_in = STDIN_FILENO;
