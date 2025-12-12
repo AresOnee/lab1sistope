@@ -1,10 +1,8 @@
 Laboratorio 2: Monitoreo y Procesamiento de Procesos con Bash y Pipes
-======================================================================
-Curso de Sistemas Operativos - Segundo Semestre 2025
 
 Integrantes:
-- Nombre: [NOMBRE_1], RUT: [RUT_1]
-- Nombre: [NOMBRE_2], RUT: [RUT_2]
+- Nombre: Sofia Vergara, RUT 21.082.148-1
+- Nombre: Vladimir Vidal, RUT 18.031.181-5
 
 DESCRIPCION
 -----------
@@ -14,21 +12,21 @@ y exec() para crear procesos hijos conectados por pipes.
 
 COMPILACION
 -----------
-Para compilar el programa:
+Para compilar el programa y impiar archivos generados:
 
-    make
+    make clean && make
 
-Para limpiar archivos generados:
-
-    make clean
+Para dar permiso a los script
+    chmod +x *.sh
 
 EJECUCION
----------
+
 El programa lee una linea de pipeline desde stdin. Ejemplos:
 
 1. Pipeline completo (6 scripts):
 
-    echo "./generator.sh -i 1 -t 5 | ./preprocess.sh | ./filter.sh -c 0 -m 0 | ./transform.sh --anon-uid | ./aggregate.sh | ./report.sh -o reporte.csv" | ./lab2
+Procesos gnome con CPU >= 1%
+./lab2 ./generator.sh -i 1 -t 10 | ./preprocess.sh | ./filter.sh -c 1 -m 0 -r "gnome" | ./transform.sh --anon-uid | ./aggregate.sh | ./report.sh -o report.csv
 
 2. Pipeline parcial (2 scripts):
 
@@ -47,9 +45,6 @@ El programa lee una linea de pipeline desde stdin. Ejemplos:
     echo "./generator.sh -i 1 -t 5 | ./preprocess.sh" > pipeline.txt
     ./lab2 < pipeline.txt
 
-OPCIONES
---------
-    -h    Muestra mensaje de ayuda
 
 SCRIPTS DISPONIBLES
 -------------------
