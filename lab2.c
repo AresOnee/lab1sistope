@@ -1,4 +1,4 @@
-//*
+/*
  * Laboratorio 2: Monitoreo y Procesamiento de Procesos con Bash y Pipes
  * Curso de Sistemas Operativos - Segundo Semestre 2025
  *
