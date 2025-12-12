@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -e
 
+# Integrantes:
+# - Nombre: Sofia Vergara, RUT 21.082.148-1
+# - Nombre: Vladimir Vidal, RUT 18.031.181-5
+
 #Entrada: la salida del generator.sh por stdin.
 #Salida: TSV con la misma estructura (ts pid uid comm pcpu pmem), validada.
 #Descripcion Esta etapa del pipeline valida y normaliza la salida del generador.  Puede
