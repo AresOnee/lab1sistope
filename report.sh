@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+
+# Integrantes:
+# - Nombre: Sofia Vergara, RUT 21.082.148-1
+# - Nombre: Vladimir Vidal, RUT 18.031.181-5
 # Entrada: TSV del aggregate (con encabezado)
 # Salida: Linea 1–3: metadatos (# generated_at=…, # user=…, # host=…) Luego, la tabla entrecomillada y con punto decimal.
 # Descripcion: Añade metadatos (# fecha de generacion, # usuario, # host).
