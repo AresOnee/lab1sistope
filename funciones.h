@@ -2,9 +2,9 @@
  * Laboratorio 2: Monitoreo y Procesamiento de Procesos con Bash y Pipes
  * Curso de Sistemas Operativos - Segundo Semestre 2025
  *
- * Integrantes:
- * - Nombre: [NOMBRE_1], RUT: [RUT_1]
- * - Nombre: [NOMBRE_2], RUT: [RUT_2]
+# Integrantes:
+# - Nombre: Sofia Vergara, RUT 21.082.148-1
+# - Nombre: Vladimir Vidal, RUT 18.031.181-5
  *
  * Archivo: funciones.h
  * Descripcion: Cabeceras de funciones para el pipeline de procesos
